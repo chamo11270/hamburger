@@ -1,0 +1,82 @@
+@charset "utf-8";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 全体 */
+body {
+  font-family: sans-serif;
+}
+
+/* nav */
+nav {
+  height: 10vh;
+  background-color: #aaa;
+}
+
+/* リンク*/
+.link {
+  display: flex;
+  list-style: none;
+  width: 50%;
+  height: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: auto;
+}
+
+.link li a {
+  color: #FFF;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+/* ハンバーガーの画像 */
+.burger {
+  width:100vw;
+}
+
+/* ハンバーガーメニュー */
+@media screen and (max-width: 760px) {
+  .buns,.patty {
+    width: 30px;
+    height: 3px;
+    background-color: #FFF;
+    margin: 5px;
+  }
+
+  nav {
+    position: relative;
+  }
+  
+  .hamburgerMenu{
+    position: absolute;
+    right:5%;
+    top: 50%;
+    transform: translate(-5% ,-50%);
+    cursor: auto;
+    /* 戻るためのやつ */
+    z-index: 2;
+  }
+
+  /* リンク */
+  .link {
+    position: fixed;
+    background-color: #aaa;
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    clip-path: circle(100px at 90% -10%);
+    -webkit-clip-path: circle(100px at 90% -20%);
+    transition: all 1s ease-in-out;
+  }
+
+  /* js用 */
+  
+  .open {
+    clip-path: circle(1100px at 90% -10%);
+    -webkit-clip-path: circle(1100px at 90% -20%);
+  }
+}
